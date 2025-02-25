@@ -6,7 +6,7 @@ import CustomButton from "@/components/shared/CustomButton";
 const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <View className="px-10 flex gap-2">
+      <View className="px-10 flex gap-2 mt-10">
         {/* <Link href='/products' asChild>
           <CustomButton color="primary">Products Link</CustomButton>
         </Link> */}
