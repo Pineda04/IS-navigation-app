@@ -15,7 +15,7 @@ const TabsLayout = () => {
         tabBarActiveBackgroundColor: 'red'
       }}
     >
-      // Home
+      {/* // Home */}
       <Tabs.Screen
         name="home/index"
         options={{
@@ -25,7 +25,7 @@ const TabsLayout = () => {
           ),
         }}
       />
-      // Favorites
+      {/* // Favorites */}
       <Tabs.Screen
         name="favorites/index"
         options={{
@@ -35,11 +35,12 @@ const TabsLayout = () => {
           ),
         }}
       />
-      // Favorites
+      {/* // Favorites */}
       <Tabs.Screen
         name="(stack)"
         options={{
           title: "Stack",
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <FontAwesome name="table" color={color} size={size} />
           ),

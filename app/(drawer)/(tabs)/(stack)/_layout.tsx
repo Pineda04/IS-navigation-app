@@ -1,15 +1,38 @@
 import React from "react";
-import { Stack } from "expo-router";
+import { router, Stack, useNavigation } from "expo-router";
+import { Text } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { DrawerActions, StackActions } from "@react-navigation/native";
 
 const StackLayout = () => {
+  const navigation = useNavigation();
+
+  const onHeaderLeftTab = (canGoBack: boolean | undefined) => {
+    if (canGoBack) {
+      // navigation.dispatch(StackActions.pop())
+      router.back();
+      return;
+    }
+
+    navigation.dispatch(DrawerActions.openDrawer);
+  };
+
   return (
     <Stack
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         headerShadowVisible: false,
         contentStyle: {
           backgroundColor: "#fff",
         },
+        headerLeft: ({ tintColor, canGoBack }) => (
+          <Ionicons
+            onPress={() => onHeaderLeftTab(canGoBack)}
+            name={canGoBack ? "arrow-back-circle-outline" : "menu"}
+            size={20}
+            className="mr-5"
+          />
+        ),
       }}
     >
       <Stack.Screen
